@@ -191,3 +191,20 @@ user@bash: ./case.sh blah
 don't know
 ~~~
 {: .output}
+
+> ## Exercise
+>
+> 1. Write a script that take 2 integers as command line argument and print out the larger of the them on the screen.
+>
+> 2. Write a greeting script that print different greeting greeting message base on which day on the week.
+>
+> ## Solution
+> >
+> > Hint:
+> >
+> > 1. Make sure that you consider all the possible(When they are equal).
+> >
+> > 2. You might want to get the information of day using `date` command.
+> >
+> {: .solution}
+{: .challenge}

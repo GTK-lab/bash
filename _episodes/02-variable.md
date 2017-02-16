@@ -212,6 +212,7 @@ A variable created by command line is only available to the current shell. It is
 
 export VARNAME="value"
 
+Each shell script running is, in effect, a subprocess (child process) of the parent shell.
 A subshell can change variables it inherited from the parent, but the changes made by the child don't affect the parent.
 
 ~~~
@@ -219,7 +220,47 @@ user@bash: mine=foo
 user@bash: echo $mine
 foo
 user@bash: ./test.sh
-
-user@bash: 
+Start of test.sh
+mine is foo
+blah
+End of test.sh
+user@bash: echo $mine
+foo
 ~~~
 {: .bash}
+
+Here is what inside of test.sh:
+
+```
+#!/bin/bash
+
+echo "Start of test.sh"
+
+echo mine is $mine
+# To see whether subshell can inherited the exported variable
+mine=blah
+# Change the variable
+echo $mine
+export mine="weehaa"
+
+echo "End of test.sh"
+```
+
+> ## Exercise
+>
+> Try to write a bash script that can back files and does the following things:
+>
+> 1. Takes on two arguments passed by command line. First one is file name and the second one is directory name
+>
+> 2. New a directory with directory name and copy the file into the new directory.
+>
+> 3. Show the all the file in long listing format in the new directory. Also show the line number details of all the file. Use your own defined variables to echo this information.
+>  
+> > ## Solution
+> >
+> > Hint:
+> >
+> > Command substitution.
+> >
+> {: .solution}
+{: .challenge}

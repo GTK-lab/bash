@@ -98,3 +98,12 @@ peaches 7
 watermelons 12
 ~~~
 {: .output}
+
+
+> ## Exercise
+>
+> 1. Create a script that would print a designated column given by the argument passed by command line.
+>
+> 2. Create a script that read a command line argument as favorite type of item; then ask user to input top 3 brands of that type of item.
+>
+{: .challenge}

@@ -111,7 +111,7 @@ The first line of the script is something like:
 
 The hash exclamation mark ( **#!** ) character sequence is referred to as the Shebang. Following it is the path to the interpreter (or program) that should be used to run (or interpret) the rest of the lines in the text file.
 
-> ### Format is important here!
+> ## Format is important here!
 > The shebang **MUST** be on the very first line of the bash script.
 >
 > There **MUST** be no space between before **#** or between the **!** and the path to the interpreter.
@@ -151,7 +151,7 @@ Bash only looks in those specific directories and doesn't consider sub directori
 
 The $PATH variable is an individual user variable so each user on a system may set it to suit themselves(.bashrc file).
 
-> ### Why this?
+> ## Why this?
 > * It allows us to have several different versions of a program installed. We can control which one gets executed based on where it sits in our $PATH.
 > * It allows for convenience. As you saw above, the first directory for myself is a bin directory in my home directory. This allows me to put my own scripts and programs there and then I can use them no matter where I am in the system by just typing their name. I could even create a script with the same name as a program (to act as a wrapper) if I wanted slightly different behaviour.
 > * It increases safety - For example a malicious user could create a script called ls which actually deletes everything in your home directory. You wouldn't want to inadvertantly run that script. But as long as it's not in your $PATH that won't happen.

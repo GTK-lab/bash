@@ -189,3 +189,20 @@ do
   cp $value $1/backup/
 done
 ```
+
+> ## Exercise
+>
+> Write a script that:
+>  
+> 1. Takes 2 command line arguments which stands for a range of integers(including these two integers).
+>
+> 2. Prints all the integers in the range and whether it is a even or odd number.
+>
+> ## Solution
+> >
+> > Hint:
+> >
+> > You might want to use a variate of for loop: `for ((i=0;i<=10;i++))`
+> >
+> {: .solution}
+{: .challenge}
