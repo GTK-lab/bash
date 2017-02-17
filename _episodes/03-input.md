@@ -1,7 +1,7 @@
 ---
 title: "Input in bash"
-teaching: 20
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
 - "How we can give input in bash"
 objectives:
@@ -102,7 +102,7 @@ watermelons 12
 
 > ## Exercise
 >
-> 1. Create a script that would print a designated column given by the argument passed by command line.
+> 1. Create a script that would print a designated column from STDIN; the column given by the argument passed by command line.
 >
 > 2. Create a script that read a command line argument as favorite type of item; then ask user to input top 3 brands of that type of item.
 >

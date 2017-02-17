@@ -1,7 +1,7 @@
 ---
 title: "Loops"
-teaching: 20
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
 - "How to use loop in bash?"
 - "What are the different types of loops?"
@@ -139,7 +139,7 @@ Let's say we want to backup all .html files to another directory.
 
 ```
 #!/bin/bash
-# Make a php copy of any html files
+# Make a backup copy of any html files
 
 for value in $1/*.html
 do
@@ -157,7 +157,7 @@ The break statement tells Bash to leave the loop straight away. It may be that t
 
 ```
 #!/bin/bash
-# copu_files.sh
+# copy_files.sh
 
 for value in $1/*
 do
