@@ -1,7 +1,7 @@
 ---
 title: "If statement"
-teaching: 20
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
 - "What is if statement?"
 - "What are the test that we can used in if statement?"
@@ -133,7 +133,7 @@ We can use boolean operation if we want the test to meet multiple conditions.
 
 * **AND** - &&
 
-* **OR** - ||
+* **OR** - &#124;&#124;
 
 Following are the occasion where we want the file we are considering to be readable as well as greater than zero in size.
 

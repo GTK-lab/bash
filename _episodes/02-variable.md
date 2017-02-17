@@ -1,7 +1,7 @@
 ---
 title: "Varibles"
-teaching: 20
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
 - "How can we pass values to variables through command line arguments?"
 - "How to declare and set your own varibles."
