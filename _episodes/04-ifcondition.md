@@ -1,23 +1,25 @@
 ---
-title: "If statement"
+title: Conditionals
 teaching: 10
 exercises: 10
 questions:
-- "What is if statement?"
-- "What are the test that we can used in if statement?"
-- "How can we use boolean operation in if statement?"
+- What is an if statement?
+- What are the tests that we can used in if statement?
+- How can we use boolean operation in if statement?
 objectives:
-- "Learn to use if statement and complex if statement."
-- "Learn to use different test and boolean operation."
-- "Learn to use case statement."
+- Learn to use simple if statement and complex if statement.
+- Learn to use different test and boolean operation.
+- Learn to use case statement.
 keypoints:
-- "If statement is fundatmental in programming bash."
-- "Remember different test would help a lot when you are writing bash scripts."
+- Conditionals such as the if statement are fundamental in programming bash.
+- Remember different tests help a lot when you are writing bash scripts.
 ---
 
 ## Basic if statement
 
-A basic if statement effectively says, if a particular test is true, then perform a given set of actions. If it is not true then don't perform those actions. If follows the format below:
+A basic if statement effectively says, if a particular test is true, then perform a given
+set of actions. If it is not true then don't perform those actions. If follows the format
+below:
 
 >      if [<some test>]
 >      then

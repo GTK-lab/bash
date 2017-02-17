@@ -125,9 +125,11 @@ myscript.sh: line 3: World: command not found
 
 This is because bash uses space to determine separate item.
 
-Therefore, we can quotes to enclose out content and bash would take the contents as a single item. We normally use single quote (**'**) and double quote (**"**).
+Therefore, we can quotes to enclose content and bash would take the contents as a single
+item. We normally use single quote (**'**) or double quote (**"**). 
 
-The difference between single quote and double quote is that: single quote will treat every character literally; double quote will alow you to do substitution.
+The difference between single quote and double quote is that: single quote will treat
+every character literally; double quote will alow you to do substitution.
 
 ~~~
 user@bash: myvar='Hello world'
@@ -144,11 +146,13 @@ More $myvar
 
 > ## Remember
 >
-> Because commands work exactly the same on the command line as in a script, it can sometimes be easier to experiment on the command line.
+> Because commands work exactly the same on the command line as in a script, it can
+> sometimes be easier to experiment on the command line. 
 >
 {: .callout}
 
-We can also do command substitution. For example, store the output of a program to a variable. In this case, we should include the command in brackets preceded by a **$**.
+We can also do command substitution. For example, store the output of a program to a
+variable. In this case, we should include the command in brackets preceded by a **$**.
 
 ~~~
 user@bash: myvar=$( ls /etc | wc -l )
@@ -158,7 +162,8 @@ user@bash: echo There are $myvar entries in the /etc
 
 ## Export variables
 
-Variables are limited to the process they were created in. Sometimes, our script may need to run another script as one of its commands. In this case, we need to export variables.
+Variables are limited to the process they were created in. Sometimes, our script may need
+to run another script as one of its commands. In this case, we need to export variables.
 
 ```
 #!/bin/bash
@@ -201,28 +206,50 @@ We may see the output like this:
 {: .output}
 
 
-The output above may seem unexpected. What actually happens when we export a variable is that we are telling Bash that every time a new process is created (to run another script or such) then make a copy of the variable and hand it over to the new process. So although the variables will have the same name they exist in separate processes and so are unrelated to each other.
+The output above may seem unexpected. What actually happens when we export a variable is
+that we are telling Bash that every time a new process is created (to run another script
+or such) then make a copy of the variable and hand it over to the new process. So although
+the variables will have the same name they exist in separate processes and so are
+unrelated to each other.
 
-Exporting variables is a one way process. The original process may pass variables over to the new process but anything that process does with the copy of the variables has no impact on the original variables.
+Exporting variables is a one way process. The original process may pass variables over to
+the new process but anything that process does with the copy of the variables has no
+impact on the original variables.
 
-Exporting variables is something you probably won't need to worry about for most Bash scripts you'll create. Sometimes you may wish to break a particular task down into several separate scripts however to make it easier to manage or to allow for reusability (which is always good). For instance you could create a script which will make a dated (ie todays date prepended to the filename) copy of all filenames exported on a certain variable. Then you could easily call that script from within other scripts you create whenever you would like to take a snapshot of a set of files.
+Exporting variables is something you probably won't need to worry about for most Bash
+scripts you'll create. Sometimes you may wish to break a particular task down into several
+separate scripts however to make it easier to manage or to allow for reusability (which is
+always good). For instance you could create a script which will make a dated (ie todays
+date prepended to the filename) copy of all filenames exported on a certain variable. Then
+you could easily call that script from within other scripts you create whenever you would
+like to take a snapshot of a set of files.
 
 ## Environment variables VS. ordinary variables
 
 **Global variables and local variables**
 
-Global variables or environment variables are available in all shells. The `env` or `printenv` commands can be used to display environment variables. These programs come with the sh-utils package.
+Global variables or environment variables are available in all shells. The `env` or
+`printenv` commands can be used to display environment variables. These programs come with
+the sh-utils package.
 
-Local variables are only available in the current shell. Using the set built-in command without any options will display a list of all variables (including environment variables) and functions. The output will be sorted according to the current locale and displayed in a reusable format.
+Local variables are only available in the current shell. Using the set built-in command
+without any options will display a list of all variables (including environment variables)
+and functions. The output will be sorted according to the current locale and displayed in
+a reusable format.
 
 **Environment variables**
 
-A variable created by command line is only available to the current shell. It is a local variable: child processes of the current shell will not be aware of this variable. In order to pass variables to a subshell, we need to export them using the export built-in command. Variables that are exported are referred to as environment variables. Setting and exporting is usually done in one step:
+A variable created by command line is only available to the current shell. It is a local
+variable: child processes of the current shell will not be aware of this variable. In
+order to pass variables to a subshell, we need to export them using the export built-in
+command. Variables that are exported are referred to as environment variables. Setting and
+exporting is usually done in one step:
 
 export VARNAME="value"
 
 Each shell script running is, in effect, a subprocess (child process) of the parent shell.
-A subshell can change variables it inherited from the parent, but the changes made by the child don't affect the parent.
+A subshell can change variables it inherited from the parent, but the changes made by the
+child don't affect the parent.
 
 ~~~
 user@bash: mine=foo

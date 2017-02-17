@@ -19,7 +19,7 @@ We can ask the user to input when we use `read`.
 
 > read myvar
 
-```
+```bash
 #!/bin/bash
 # Ask the user for name
 
@@ -27,7 +27,7 @@ echo Hello, who am I talking to?
 
 read varname
 
-echo It\'s nice to meet you $varname
+echo "It's nice to meet you $varname"
 
 ```
 
@@ -43,20 +43,27 @@ We can also read in multiple variables at the same time. For example,
 ```
 #!/bin/bash
 
-echo Name me the top three fruit that you like?
+echo -n "Name your top three favourite fruits: "
 
 read fruit1 fruit2 fruit3
 
-echo Your first car was: $fruit1
-echo Your second car was: $fruit2
-echo Your third car was: $fruit3
+echo Your first fruit was: $fruit1
+echo Your second fruit was: $fruit2
+echo Your third fruit was: $fruit3
 ```
+(Notice the use of "echo -n", which suppresses the newline after the echo.)
 
 ## Reading from STDIN
 
-It's common in Linux to pipe a series of simple, single purpose commands together to create a larger solution tailored to our exact needs. The ability to do this is one of the real strengths of Linux. It turns out that we can easily accommodate this mechanism with our scripts also. By doing so we can create scripts that act as filters to modify data in specific ways for us.
+It's common in Linux to pipe a series of simple, single purpose commands together to
+create a larger solution tailored to our exact needs. The ability to do this is one of the
+real strengths of Linux. It turns out that we can easily accommodate this mechanism with
+our scripts also. By doing so we can create scripts that act as filters to modify data in
+specific ways for us.
 
-Bash accommodates piping and redirection by way of special files. Each process gets it's own set of files (one for STDIN, STDOUT and STDERR respectively) and they are linked when piping or redirection is invoked. Each process gets the following files:
+Bash accommodates piping and redirection by way of special files. Each process gets it's
+own set of files (one for STDIN, STDOUT and STDERR respectively) and they are linked when
+piping or redirection is invoked. Each process gets the following files:
 
 * STDIN - /proc/<processID>/fd/0
 * STDOUT - /proc/<processID>/fd/1
@@ -70,7 +77,9 @@ To make life more convenient the system creates some shortcuts for us:
 
 fd in the paths above stands for file descriptor.
 
-So if we would like to make our script able to process data that is piped to it all we need to do is read the relevant file. All of the files mentioned above behave like normal files.
+So if we would like to make our script able to process data that is piped to it all we
+need to do is read the relevant file. All of the files mentioned above behave like normal
+files.
 
 ```
 #!/bin/bash
@@ -100,10 +109,11 @@ watermelons 12
 {: .output}
 
 
-> ## Exercise
+>## Exercise
 >
-> 1. Create a script that would print a designated column from STDIN; the column given by the argument passed by command line.
->
-> 2. Create a script that read a command line argument as favorite type of item; then ask user to input top 3 brands of that type of item.
+>1. Create a script that would print a designated column from STDIN; the column given by
+>   the argument passed by command line.
+>2. Create a script that read a command line argument as favorite type of item; then ask
+>   user to input top 3 brands of that type of item. 
 >
 {: .challenge}
