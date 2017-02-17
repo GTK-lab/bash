@@ -32,8 +32,8 @@ For example, I need to check the current working directory
 #!/bin/bash
 # A simple bash script
 
-pwd
-# Show the current working directory
+echo $1
+# Show the first command line argument.
 ```
 
 > ## Try it yourself
@@ -61,7 +61,7 @@ There are many special variables that are already defined by the system.
 
 ## Set your own variables
 
-The basis form of assign a variable would be like this:
+The basis form of assigning a variable would be like this:
 
 > variable=value
 
@@ -202,7 +202,7 @@ Exporting variables is something you probably won't need to worry about for most
 
 **Global variables and local variables**
 
-Global variables or environment variables are available in all shells. The env or printenv commands can be used to display environment variables. These programs come with the sh-utils package.
+Global variables or environment variables are available in all shells. The `env` or `printenv` commands can be used to display environment variables. These programs come with the sh-utils package.
 
 Local variables are only available in the current shell. Using the set built-in command without any options will display a list of all variables (including environment variables) and functions. The output will be sorted according to the current locale and displayed in a reusable format.
 
