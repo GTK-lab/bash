@@ -69,7 +69,7 @@ There are many special variables that are already defined by the system.
 
 ## Set your own variables
 
-The basis form of assigning a variable would be like this:
+The basic form of assigning a variable would be like this:
 
 > variable=value
 
@@ -83,7 +83,7 @@ Here is a simple example:
 
 ```
 #!/bin/bash
-# A simple script of assign variables
+# A simple script of assigning variables
 
 myvariable=Hello
 yourvariable=World
@@ -105,11 +105,12 @@ acpi adduser.conf alternatives apache2 ...
 
 ## Quotes
 
-In the content above, we keep our variable simple, that the variables only need to store one word. In reality, we might need to assign variables with more complex value.
+In the content above, we keep our variable simple, that the variables only need to store
+one word. In reality, we might need to assign variables with more complex value.
 
 ```
 #!/bin/bash
-# A simple script that would produce error
+# A simple script that would produce an error
 
 myvar=Hello World
 
