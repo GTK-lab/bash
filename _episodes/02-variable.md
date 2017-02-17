@@ -1,30 +1,36 @@
 ---
-title: "Varibles"
+title: Variables
 teaching: 20
 exercises: 0
 questions:
-- "How can we pass values to variables through command line arguments?"
-- "How to declare and set your own varibles."
-- "How to assign complex value to variables using quotes?"
-- "How can we export variables?"
+- How can we pass values to variables through command line arguments?
+- How to declare and set your own variables.
+- How to assign complex value to variables using quotes?
+- How can we export variables?
 objectives:
-- "Explain assign variable with command line arguments."
-- "Explain the ways to set variables."
-- "Explain different scope of variable through exporting."
+- Explain assign variable with command line arguments.
+- Explain the ways to set variables.
+- Explain different scope of variable through exporting.
 keypoints:
-- "Bash has its own built-in variables to be used."
-- "Bash uses a space to separate items."
-- "You can store the output of programs to variable using command substitution."
-- "Variables has different scope. Normally variables used within one process."
+- Bash has its own built-in variables to be used.
+- Bash uses a space to separate items.
+- You can store the output of programs to variable using command substitution.
+- Variables has different scope. Normally variables used within one process.
 ---
 
 ## Command line arguments
 
 Command line arguments are commonly used and easy to work with so they are a good place to start.
 
-When we run a program on the command line you would be familiar with supplying arguments after it to control its behaviour. For instance we could run the command ls -l /etc. -l and /etc are both command line arguments to the command ls.
+When we run a program on the command line you would be familiar with supplying arguments
+after it to control its behaviour. For instance we could run the command `ls -l /etc`. In
+this example, `-l` and `/etc` are both command line arguments to the command `ls`.
+Arguments are generally separated by spaces.
 
-We can do similar with our bash scripts. To do this we use the variables $1 to represent the first command line argument, $2 to represent the second command line argument and so on. These are automatically set by the system when we run our script so all we need to do is refer to them.
+We can do the same thing with our bash scripts. To do this we use the variables $1 to
+represent the first command line argument, $2 to represent the second command line
+argument and so on. These are automatically set by the system when we run our script so
+all we need to do is refer to them.
 
 For example, I need to check the current working directory
 
@@ -37,9 +43,11 @@ pwd
 ```
 
 > ## Try it yourself
-> Write a bash script that can tell the number of files and folders under the directory that passed to it?
+> 
+> Write a bash script that can tell the number of files and folders under the directory
+> that is passed to it as a command line argument
 >
-> Use it to see how many files and folders are under /etc and your home directory.
+> Use the script you just wrote to see how many files and folders are under /etc and your home directory.
 {: .challenge}
 
 There are many special variables that are already defined by the system.
